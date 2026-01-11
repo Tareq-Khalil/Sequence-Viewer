@@ -1,0 +1,51 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "sort-destructure-keys",
+    "sort-keys-fix",
+    "typescript-sort-keys",
+    "react-hooks"
+  ],
+  "rules": {
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": ["class", "export", "function", "interface", "type"]
+      }
+    ],
+    "no-empty": "warn",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "react/jsx-sort-props": [2, { "reservedFirst": true, "callbacksLast": true }],
+    "react/prop-types": "off", // too many prop types warnings in handlers/selection.tsx. Should revist
+    "sort-destructure-keys/sort-destructure-keys": 2,
+    "sort-keys-fix/sort-keys-fix": "error",
+    "typescript-sort-keys/interface": "error",
+    "typescript-sort-keys/string-enum": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/no-unused-prop-types": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
